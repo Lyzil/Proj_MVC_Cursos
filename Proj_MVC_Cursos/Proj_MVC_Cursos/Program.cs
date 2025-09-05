@@ -8,7 +8,7 @@ int opcao;
 Escola minhaEscola = new Escola();
 
 //  Script de teste
-
+/*
 // Criando cursos
 Curso curso1 = new Curso(1, "Engenharia de Software");
 Curso curso2 = new Curso(2, "Redes de Computadores");
@@ -51,7 +51,8 @@ foreach (Curso c in minhaEscola.Cursos)
     }
 }
 Console.WriteLine("========================================\n");
-//*/
+*/
+
 do
 {
     Console.WriteLine("Menu de opções " +
@@ -421,3 +422,4 @@ do
             break;
     }
 } while (opcao != 0);
+
