@@ -1,0 +1,14 @@
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\obj\Debug\net8.0\Proj_MVC_Cursos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\obj\Debug\net8.0\Proj_MVC_Cursos.AssemblyInfoInputs.cache
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\obj\Debug\net8.0\Proj_MVC_Cursos.AssemblyInfo.cs
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\obj\Debug\net8.0\Proj_MVC_Cursos.csproj.CoreCompileInputs.cache
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\bin\Debug\net8.0\Proj_MVC_Cursos.exe
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\bin\Debug\net8.0\Proj_MVC_Cursos.deps.json
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\bin\Debug\net8.0\Proj_MVC_Cursos.runtimeconfig.json
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\bin\Debug\net8.0\Proj_MVC_Cursos.dll
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\bin\Debug\net8.0\Proj_MVC_Cursos.pdb
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\obj\Debug\net8.0\Proj_MVC_Cursos.dll
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\obj\Debug\net8.0\refint\Proj_MVC_Cursos.dll
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\obj\Debug\net8.0\Proj_MVC_Cursos.pdb
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\obj\Debug\net8.0\Proj_MVC_Cursos.genruntimeconfig.cache
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj_MVC_Cursos\Proj_MVC_Cursos\obj\Debug\net8.0\ref\Proj_MVC_Cursos.dll

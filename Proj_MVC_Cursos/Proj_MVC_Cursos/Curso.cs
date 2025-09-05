@@ -45,20 +45,20 @@ namespace Proj_MVC_Cursos
         public string Descricao { get => descricao; set => descricao = value; }
         internal Disciplina[] Disciplinas { get => disciplinas; set => disciplinas = value; }
         public int Max { get => max; }
-        public int Qtde { get => qtde; }
+        public int Qtde { get => qtde; set => qtde = value; }
 
         public bool adicionarDisciplina(Disciplina disciplina)
         {
 
-            foreach (Disciplina disc in this.disciplinas)
+            for (int i = 0; i < Qtde; i++)
             {
-                if (disc.Id != -1 && disc.Id == disciplina.Id)
+                if (Disciplinas[i].Id == disciplina.Id)
                     return false;
             }
-            bool podeAdicionar = (this.qtde < this.max);
-            if (podeAdicionar)
-                this.Disciplinas[qtde++] = disciplina; 
-            return podeAdicionar;
+            if (Qtde >= Max) return false;
+
+            this.Disciplinas[qtde++] = disciplina; 
+            return true;
         }
         public Disciplina pesquisarDisciplina(Disciplina disciplina)
         {
@@ -71,32 +71,27 @@ namespace Proj_MVC_Cursos
             }
             return disciplinaAchada;
         }
-
         public bool removerDisciplina(Disciplina disciplina) 
         {
-            Disciplina disciplinaParaRemover = pesquisarDisciplina(disciplina);
-            if (disciplinaParaRemover.Id == -1)
-                return false;
-            foreach (Aluno aluno in disciplinaParaRemover.Alunos)
+            for (int i = 0; i < Qtde; i++)
             {
-                if (aluno.Id != -1)
+                if (Disciplinas[i].Id == disciplina.Id)
                 {
-                    return false;
+                    if (Disciplinas[i].Qtde > 0) return false; 
+
+                    for (int j = i; j < Qtde - 1; j++)
+                        Disciplinas[j] = Disciplinas[j + 1];
+
+                    Disciplinas[Qtde - 1] = new Disciplina();
+                    Qtde--;
+                    return true;
                 }
             }
-            int i = 0;
-            while(i < this.max && this.disciplinas[i].Id != disciplina.Id)
-            {
-                i++;
-            }
-            for (int j = i; j < max - 1; j++)
-            {
-                this.disciplinas[j] = this.disciplinas[j+1];
-            }
-            this.disciplinas[this.max - 1] = new Disciplina();
-            this.qtde--;
-
-            return true;
+            return false;
+        }
+        public override bool Equals(object obj)
+        {
+            return (this.Id == ((Curso)obj).Id);
         }
     }
 }

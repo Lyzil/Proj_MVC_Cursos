@@ -31,6 +31,16 @@ namespace Proj_MVC_Cursos
                 this.alunos[i] = new Aluno();
             }
         }
+
+        public Disciplina(int id) : this(id, "")
+        {
+            this.id = id;
+            this.alunos = new Aluno[Max];
+            for (int i = 0; i < Max; i++)
+            {
+                this.alunos[i] = new Aluno();
+            }
+        }
         public int Id { get => id; set => id = value; }
         public string Descricao { get => descricao; set => descricao = value; }
         internal Aluno[] Alunos { get => alunos; set => alunos = value; }
@@ -39,34 +49,29 @@ namespace Proj_MVC_Cursos
 
         public bool matricularAluno(Aluno aluno)
         {
-            foreach (Aluno alu in this.alunos)
+            for (int i = 0; i < Qtde; i++)
             {
-                if (alu.Id != -1 && alu.Id == aluno.Id)
+                if (Alunos[i].Id == aluno.Id)
                     return false;
             }
-            bool podeAdicionar = (this.Qtde < this.Max);
-            if (podeAdicionar)
-                this.Alunos[Qtde++] = aluno;
-            return podeAdicionar;
+
+            if (Qtde >= Max)
+                return false;
+
+            Alunos[Qtde++] = aluno;
+            return true;
         }
         public bool desmatricularAluno(Aluno aluno) 
         {
-            foreach (Aluno alu in this.alunos)
+            for (int i = 0; i < Qtde; i++)
             {
-                if (alu.Id != -1 && alu.Id == aluno.Id)
+                if (Alunos[i].Id == aluno.Id)
                 {
-                    int i = 0;
-                    while (i < this.max && this.alunos[i].Id != aluno.Id)
-                    {
-                        i++;
-                    }
-                    for (int j = i; j < max - 1; j++)
-                    {
+                    for (int j = i; j < Qtde - 1; j++)
                         this.alunos[j] = this.alunos[j + 1];
-                    }
-                    this.alunos[this.max - 1] = new Aluno();
-                    this.qtde--;
 
+                    this.alunos[this.Qtde - 1] = new Aluno();
+                    this.qtde--;
                     return true;
                 }
             }

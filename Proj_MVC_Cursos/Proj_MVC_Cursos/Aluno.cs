@@ -23,9 +23,36 @@ namespace Proj_MVC_Cursos
         }
         public Aluno() : this(-1, ""){ }
 
+        public Aluno(int id) : this(id, "") { this.id = id; }
+
         public bool podeMatricular(Curso cursos) 
         {
+            int disciplinasMatriculadas = 0;
 
+            foreach (Disciplina disc in cursos.Disciplinas)
+            {
+                if (disc.Id != -1)
+                {
+                    foreach (Aluno alu in disc.Alunos)
+                    {
+                        if (alu.Id == this.Id)
+                            disciplinasMatriculadas++;
+                    }
+                }
+            }
+            if (disciplinasMatriculadas >= 6)
+                return false;
+
+            foreach (Disciplina disc in cursos.Disciplinas)
+            {
+                if (disc.Id != -1 && disc.Qtde < disc.Max)
+                    return true;
+            }
+            return false;
+        }
+        public override bool Equals(object obj)
+        {
+            return (this.Id == ((Aluno)obj).Id);
         }
     }
 }

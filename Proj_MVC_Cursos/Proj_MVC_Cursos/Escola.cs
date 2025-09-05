@@ -52,29 +52,22 @@ namespace Proj_MVC_Cursos
         }
         public bool removerCurso(Curso curso)
         {
-            Curso CursoParaRemover = pesquisarCurso(curso);
-            if (CursoParaRemover.Id == -1)
-                return false;
-            foreach (Disciplina disc in CursoParaRemover.Disciplinas)
+            for (int i = 0; i < Qtde; i++)
             {
-                if (disc.Id != -1)
+                if (cursos[i].Id == curso.Id)
                 {
-                    return false;
+                    // Se possuir disciplinas, não remove
+                    if (cursos[i].Qtde > 0) return false;
+
+                    for (int j = i; j < Qtde - 1; j++)
+                        cursos[j] = cursos[j + 1];
+
+                    cursos[Qtde - 1] = new Curso();
+                    Qtde--;
+                    return true;
                 }
             }
-            int i = 0;
-            while (i < this.Max && this.cursos[i].Id != curso.Id)
-            {
-                i++;
-            }
-            for (int j = i; j < Max - 1; j++)
-            {
-                this.cursos[j] = this.cursos[j + 1];
-            }
-            this.cursos[this.Max - 1] = new Curso();
-            this.Qtde--;
-
-            return true;
+            return false;
         }
     }
 }
